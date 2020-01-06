@@ -52,11 +52,11 @@ Example maze in text art:
 
 ```
 ###########
-  #     # #
+i #     # #
 # ### # # #
 #   # #   #
 ### # ### #
-#     #           <-- Note: possible trailing spaces are kept
+#     #   E
 ###########
 ```
 
@@ -77,3 +77,5 @@ So, each line is `width * 2 + 1` chars, and there are `height * 2 + 1` lines
 total.
 
 Any non-space chars can be used for WALLs.
+
+Letters `i` and `E` in OUTER WALL are Entrance and Exit respectively.
