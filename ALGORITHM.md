@@ -42,15 +42,17 @@ So, the maze generation algorithm:
         1.  Decrement `length` by 1.
         2.  Choose random direction `dStart` (up/left/down/right).
         3.  Giving any static sequence of all 4 possible directions and starting
-            with random direction `dStart` find a direction leading to _free_
-            CELL `cNext` adjacent to `cCurrent` in that direction.
-        4.  Remove `cNext` from `aFree`.
-        5.  Remove WALL between `cCurrent` and `cNext`.
-        6.  Remove `cCurrent` from `cFrontier` if `cCurrent` does not have
-            adjacent _free_ CELLs anymore.
-        7.  Set `cCurrent` to `cNext`.
-        8.  Add `cCurrent` to `cFrontier` if `cCurrent` has any adjacent
+            with direction `dStart` find a direction leading to _free_ CELL
+            `cNext` adjacent to `cCurrent` in that direction.
+        4.  Remove WALL between `cCurrent` and `cNext`.
+        5.  Remove `cNext` from `aFree`.
+        6.  If `aFree` is empty, exit loop `BRANCH`.
+        7.  For each CELL `cSibling` adjacent to `cNext`:
+            1.  Remove `cSibling` from `cFrontier` if `cSibling` does not have
+                adjacent _free_ CELLs.
+        8.  Add `cNext` to `cFrontier` if `cNext` has any adjacent
             _free_ CELL, or exit loop `BRANCH` otherwise.
+        9.  Set `cCurrent` to `cNext`.
 7.  Pick any two CELLS `cEntrance` and `cExit` adjacent to the OUTER WALL and
     remove one OUTER WALL in both. The choice may be fixed, like top-left and
     bottom-right.
