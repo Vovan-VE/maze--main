@@ -56,3 +56,11 @@ So, the maze generation algorithm:
 7.  Pick any two CELLS `cEntrance` and `cExit` adjacent to the OUTER WALL and
     remove one OUTER WALL in both. The choice may be fixed, like top-left and
     bottom-right.
+
+## Solve Algorithm
+
+TBW
+
+## Validation Algorithm
+
+TBW

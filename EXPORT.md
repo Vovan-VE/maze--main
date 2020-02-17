@@ -1,5 +1,7 @@
-Maze export format
-==================
+Export formats
+==============
+
+## Maze Export
 
 Example maze in text art:
 
@@ -10,7 +12,7 @@ Example maze in text art:
 └─────┴───╴
 ```
 
-## JSON
+### JSON
 
 ```
 {
@@ -48,11 +50,11 @@ Example maze in text art:
     bottom OUTER WALL, so it can be only `"0"` or `"1"`. As the result, the last
     char in the last string is always `"0"`.
 
-#### Options
+##### Options
 
 *   `pretty`: pretty format JSON if option was set.
 
-## Text
+### Text
 
 ```
 ###########
@@ -82,7 +84,7 @@ total.
 
 Any non-space chars can be used for WALLs.
 
-#### Options
+##### Options
 
 *   `wall`: a string to represent single wall block. Can be any UTF-8 string.
     Default is `#`.
@@ -99,3 +101,13 @@ to `EXIT` (4 chars), a `1x1` "maze" would look like following:
 ()(   @$%
 @$%EXI@$%
 ```
+
+## Solve Export
+
+### JSON
+
+TBW
+
+### Text
+
+TBW
