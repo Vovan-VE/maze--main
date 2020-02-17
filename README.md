@@ -32,7 +32,8 @@ Ready status covers following parts:
 
 #### WIP
 
-*   PHP — 57%: no `solve`, `import`, `validate`.
+*   [PHP](https://github.com/Vovan-VE/maze-php) — 57%:
+    no `solve`, `import`, `validate`.
 
 #### Next planned (alphabetical order)
 
