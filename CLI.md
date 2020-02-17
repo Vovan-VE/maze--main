@@ -61,6 +61,10 @@ Options:
     Output format. Can be one of `art`, `json` or `text`. The default is `art`
     to be human readable.
 
+*   `-c <NAME>=<VALUE>`
+
+    Output format option. The `<NAME>` depends on chosen format in `-f`.
+
 #### `help` command
 
 Show usage help.

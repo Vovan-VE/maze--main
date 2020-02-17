@@ -28,7 +28,7 @@ Example maze in text art:
 
 *   `width: number` - width of FIELD in CELLs;
 *   `height: number` - height of FIELD in CELLs;
-*   `in: [side, offset]` - entrance position:
+*   `in: [side, offset] | null` - entrance position:
     *   `side: string` - side of the OUTER WALL: `"top"`, `"right"`, `"bottom"`
         or `"left"`;
     *   `offset: number` - zero based offset on the `side` wall starting from
@@ -47,6 +47,10 @@ Example maze in text art:
     bottom CELLs (that is all chars in the last string) does not describe the
     bottom OUTER WALL, so it can be only `"0"` or `"1"`. As the result, the last
     char in the last string is always `"0"`.
+
+#### Options
+
+*   `pretty`: pretty format JSON if option was set.
 
 ## Text
 
@@ -78,4 +82,20 @@ total.
 
 Any non-space chars can be used for WALLs.
 
-Letters `i` and `E` in OUTER WALL are Entrance and Exit respectively.
+#### Options
+
+*   `wall`: a string to represent single wall block. Can be any UTF-8 string.
+    Default is `#`.
+*   `in`: a string to represent an Entrance door. Can be any UTF-8 string. When
+    its length does not match with `wall` length, `in` will be repeated and
+    truncated to reach exactly the same length as `wall`.
+*   `out`: a string to represent an Exit door. All the rest is the same as `in`.
+
+For example, setting `wall` to `@$%` (3 chars), `in` to `()` (2 chars) and `out`
+to `EXIT` (4 chars), a `1x1` "maze" would look like following:
+
+```
+@$%@$%@$%
+()(   @$%
+@$%EXI@$%
+```
