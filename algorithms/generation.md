@@ -1,28 +1,16 @@
-Definitions and Algorithms
-==========================
+## Maze Generation Algorithm
 
-## Definitions
-
-The MAZE in this project is a "standard" (or "perfect") 2D rectangular maze.
-A MAZE is a FIELD of CELLS. Adjacent CELLs are optionally separated by WALLs.
-An absence of a WALLs forms a WAY to walkthrough. Perimeter is closed by the
-OUTER WALL, but some two outer CELLS which are ENTRANCE and EXIT.
-
-A "standard" (or "perfect") maze definition means, that any two CELLs of a MAZE
-are always have the only way to walkthrough. This means there are no circular
-WAYs and WALLs.
-
-## Generation Algorithm
+**Note:** This page refers to some [definitions](README.md).
 
 The maze generation algorithm used in the project is graph based algorithm.
 
-Input options:
+#### Input options
 
 *   **width** `W` and **height** `H`: a size of the maze FIELD;
 *   **branch length** `BL`: an integer number `1 <= BL <= W * H`. May be
     treated as complexity of a maze. The lower value, the easier the maze.
 
-So, the maze generation algorithm:
+### Generation algorithm
 
 1.  Start with a FIELD `M` with `W` width and `H` height of CELLs with all WALLs
     set (including the OUTER WALL without ENTRANCE and EXIT).
@@ -56,11 +44,3 @@ So, the maze generation algorithm:
 7.  Pick any two CELLS `cEntrance` and `cExit` adjacent to the OUTER WALL and
     remove one OUTER WALL in both. The choice may be fixed, like top-left and
     bottom-right.
-
-## Solve Algorithm
-
-TBW
-
-## Validation Algorithm
-
-TBW

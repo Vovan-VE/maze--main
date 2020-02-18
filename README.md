@@ -7,9 +7,9 @@ common development techniques like code and repo organizing and testing.
 
 Further reading:
 
-*   [Definitions and Algorithms](./ALGORITHM.md)
-*   [Maze export format](./EXPORT.md)
-*   [Command Line Interface](./CLI.md)
+*   [Definitions and Algorithms](algorithms/README.md)
+*   [Export formats](export/README.md)
+*   [Command Line Interface](cli.md)
 *   Wikipedia: [Maze generation algorithm](https://en.wikipedia.org/wiki/Maze_generation_algorithm)
 
 ## Implementations

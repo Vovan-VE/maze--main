@@ -1,7 +1,6 @@
-Export formats
-==============
+## Maze Export Formats
 
-## Maze Export
+**Note:** This page refers to some [definitions](../algorithms/README.md).
 
 Example maze in text art:
 
@@ -14,7 +13,7 @@ Example maze in text art:
 
 ### JSON
 
-```
+```json5
 {
   "width": 5,
   "height": 3,
@@ -22,7 +21,7 @@ Example maze in text art:
   "out": ["right", 2], // exit: side and zero based offset
   "cells": [           // array of rows: array length is height
     "12010",           // row length is width
-    "21120",           // each char describe left and down walls
+    "21120",           // each char describe right and down walls
     "00100"            // excluding outer wall
   ]
 }
@@ -101,13 +100,3 @@ to `EXIT` (4 chars), a `1x1` "maze" would look like following:
 ()(   @$%
 @$%EXI@$%
 ```
-
-## Solve Export
-
-### JSON
-
-TBW
-
-### Text
-
-TBW

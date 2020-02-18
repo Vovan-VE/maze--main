@@ -54,7 +54,7 @@ Options:
     from 0 to 1 as fraction of max (for example, `0.2` is
     `round(0.2 * WIDTH * HEIGHT)`). Default is 10.
 
-    See "Input options" in [Definitions and Algorithms](./ALGORITHM.md).
+    See "Input options" in [Generation Algorithms](algorithms/generation.md).
 
 *   `-f <FORMAT>`, `--format=<FORMAT>`
 
