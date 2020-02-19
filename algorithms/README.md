@@ -14,5 +14,6 @@ WAYs and WALLs.
 #### Algorithms
 
 *   [Generation](generation.md)
+*   [Base Walk](walk.md)
 *   [Solution](solution.md)
 *   [Validation](validation.md)
