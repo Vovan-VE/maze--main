@@ -15,9 +15,15 @@ base algorithm for both solution and validation algorithms.
     in direction `dTarget`) in case when `cTarget` is non-previous part of
     visited WAY in a current state.
 
-### Walk algorithm
+#### Output
 
->   DRAFT, not tested
+*   If EXIT reached, then the result is an ordered list of CELLs to show a way
+    from ENTRANCE to EXIT;
+*   If walked back to ENTRANCE, then the result is `null` (empty result);
+*   If the input maze `M` has no ENTRANCE or contains some unexpected holes in
+    the OUTER WALL, then fail (exception thrown).
+
+### Walk algorithm
 
 1.  Get ENTRANCE `IN` of maze `M`. If ENTRANCE is not defined, fail;
 2.  Set `cCurrent` to CELL adjacent to `IN`;
@@ -31,20 +37,22 @@ base algorithm for both solution and validation algorithms.
             1.  If `bExit` is `true` OR direction `dTurn` at CELL `cCurrent` is
                 not pointing to EXIT:
                 1.  Set `dNext` to `dTurn` and exit loop `TURN:`.
-    3.  If CELL `cCurrent` and direction `dNext` are pointing to ENTRANCE or
-        EXIT, then finish the algorithm;
-    4.  Set `cNext` to CELL adjacent to `cCurrent` in direction `dNext`;
-    5.  If `cNext` is previous (last minus 1) item in `aSolve`, then:
+    3.  If CELL `cCurrent` and direction `dNext` are pointing to EXIT, then
+        finish the algorithm and return CELLs list from `aSolve` as a result;
+    4.  If CELL `cCurrent` and direction `dNext` are pointing to ENTRANCE, then
+        finish the algorithm and return `null` result;
+    5.  Set `cNext` to CELL adjacent to `cCurrent` in direction `dNext`;
+    6.  If `cNext` is previous (last minus 1) item in `aSolve`, then:
         1.  Remove last item from `aSolve`.
-    6.  Else If `aSolve` contains `cNext`, then:
+    7.  Else If `aSolve` contains `cNext`, then:
         1.  If `willShortcut` input callback was set, then:
             1.  Call `willShortcut` callback passing `cCurrent`, `cNext` and
                 `dNext` as arguments;
             2.  If `willShortcut` signals to finish or abort walk, then finish
                 algorithm with appropriate status.
         2.  Remove from `aSolve` all items after `cNext` occurrence.
-    7.  Else:
+    8.  Else:
         1.  Add `cNext` to the end of `aSolve`.
-    8.  End If;
-    9.  Set `cCurrent` to `cNext`;
-    10. Set `dLook` to `dNext`.
+    9.  End If;
+    10. Set `cCurrent` to `cNext`;
+    11. Set `dLook` to `dNext`.
