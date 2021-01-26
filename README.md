@@ -30,8 +30,10 @@ Ready status covers following parts:
 
 *   (none yet)
 
-#### WIP
+#### WIP (alphabetical order)
 
+*   [Go](https://github.com/Vovan-VE/maze-go) — 57%:
+    no `import`, `solve`, `validate`.
 *   [PHP](https://github.com/Vovan-VE/maze-php) — 71%:
     no `solve`, `validate`.
 
@@ -44,4 +46,3 @@ Ready status covers following parts:
 #### Further wishes
 
 *   Bash (crazy/stupid challenge)
-*   Go
